@@ -514,20 +514,32 @@ label {
 .carta-memoria {
     background-color: #47216b;
     color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 100px;
-    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
     border-radius: 10px;
     cursor: pointer;
     user-select: none;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s;
 }
 
 .carta-memoria:hover {
     background-color: #630663;
-    transform: scale(1.08);
+}
+
+.carta-memoria:active {
+    transform: scale(0.95);
+}
+
+.intentos {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #8d4dfc;
 }
 
 /* Responsive */
