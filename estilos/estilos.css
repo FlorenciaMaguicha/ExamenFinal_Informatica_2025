@@ -164,7 +164,7 @@ body {
     transform: scale(1.05);
 }
 
-.boton-video {
+.boton-video,.btn-jugar-again {
     display: inline-block;
     margin-top: 10px;
     font-size: 18px;
@@ -502,12 +502,13 @@ label {
 }
 
 /*Juego*/
+
 #juego-memoria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width: 400px;
-    margin: 80px auto 20px;
+    margin: 220px auto 20px;
     padding: 10px;
 }
 
@@ -534,13 +535,14 @@ label {
     transform: scale(0.95);
 }
 
-.intentos {
+#intentos, #cartas-emparejadas {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
-    color: #8d4dfc;
+    color: white;
 }
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -650,6 +652,6 @@ label {
 
     #juego-memoria {
         max-width: 90%;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(4, 1fr);
     }
 }
