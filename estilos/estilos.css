@@ -164,7 +164,7 @@ body {
     transform: scale(1.05);
 }
 
-.boton-video,.btn-jugar-again {
+.boton-video {
     display: inline-block;
     margin-top: 10px;
     font-size: 18px;
@@ -502,7 +502,6 @@ label {
 }
 
 /*Juego*/
-
 #juego-memoria {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -510,10 +509,11 @@ label {
     max-width: 400px;
     margin: 220px auto 20px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .carta-memoria {
-    background-color: #47216b;
+    background-color: #4a1779;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -535,7 +535,8 @@ label {
     transform: scale(0.95);
 }
 
-#intentos, #cartas-emparejadas {
+#intentos,
+#cartas-emparejadas {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
@@ -543,6 +544,26 @@ label {
     color: white;
 }
 
+.btn-jugar-again {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 18px;
+    font-weight: bold;
+    max-width: 150px;
+    color: white;
+    background-color: #e037e0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.carta-memoria.acertada {
+    background-color: #a315ce; 
+    color: white;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -651,7 +672,9 @@ label {
     }
 
     #juego-memoria {
-        max-width: 90%;
         grid-template-columns: repeat(4, 1fr);
+        max-width: 95%;
+        margin-top: 110px;
+        padding: 10px;
     }
 }

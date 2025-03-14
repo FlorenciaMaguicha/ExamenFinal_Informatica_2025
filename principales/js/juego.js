@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    alert("Bienvenido al juego de memoria con canciones de Nicki. \nEl objetivo es emparejar todas las cartas. \nCada carta tiene el nombre de una canción y se volteará al hacer click. \nTenés 10 intentos para emparejar todas las cartas. \n\n¡Buena suerte!");
+
     const tablero = document.getElementById("juego-memoria");
     const intentosTexto = document.getElementById("intentos");
     const cartasEmparejadasTexto = document.getElementById("cartas-emparejadas");
@@ -36,7 +38,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (cartaVolteada === null) {
             cartaVolteada = this;
         } else {
-            if (cartaVolteada.dataset.nombre === this.dataset.nombre) {
+            const primeraCarta = cartaVolteada;
+            const segundaCarta = this;
+
+            if (primeraCarta.dataset.nombre === segundaCarta.dataset.nombre) {
+                primeraCarta.classList.add("acertada");
+                segundaCarta.classList.add("acertada");
+
                 cartaVolteada = null;
                 cartasEmparejadas++;
                 cartasEmparejadasTexto.textContent = `Cartas emparejadas: ${cartasEmparejadas}`;
@@ -52,11 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     finDelJuego();
                 }
 
-                setTimeout(function () {
-                    cartaVolteada.textContent = "?";
-                    this.textContent = "?";
+                setTimeout(() => {
+                    primeraCarta.textContent = "?";
+                    segundaCarta.textContent = "?";
                     cartaVolteada = null;
-                }.bind(this), 1000);
+                }, 500);
             }
         }
     }
@@ -94,15 +102,15 @@ document.addEventListener("DOMContentLoaded", () => {
     function reiniciarJuego() {
         tablero.innerHTML = "";
         intentosRestantes = 10;
-        intentosTexto.textContent = `Intentos restantes: ${intentosRestantes}`;
         cartasEmparejadas = 0;
-        cartasEmparejadasTexto.textContent = `Cartas emparejadas: ${cartasEmparejadas}`;
         juegoTerminado = false;
 
-        cartas = [...nombresCanciones, ...nombresCanciones];
-        cartas = cartas.sort(() => Math.random() - 0.5);
+        intentosTexto.textContent = `Intentos restantes: ${intentosRestantes}`;
+        cartasEmparejadasTexto.textContent = `Cartas emparejadas: ${cartasEmparejadas}`;
 
-        cartas.forEach(function (nombre) {
+        cartas = [...nombresCanciones, ...nombresCanciones].sort(() => Math.random() - 0.5);
+
+        cartas.forEach(nombre => {
             const carta = document.createElement("div");
             carta.classList.add("carta-memoria");
             carta.dataset.nombre = nombre;
