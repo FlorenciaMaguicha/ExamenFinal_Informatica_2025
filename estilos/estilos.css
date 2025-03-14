@@ -7,6 +7,14 @@ body {
     flex-direction: column;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
 /*Barra de navegación*/
 .navbar {
     padding: 1rem 2rem;
@@ -544,7 +552,8 @@ label {
     color: white;
 }
 
-.btn-jugar-again-ganar, .btn-jugar-again-perder {
+.btn-jugar-again-ganar,
+.btn-jugar-again-perder {
     display: block;
     margin: 20px auto 10px;
     font-size: 18px;
@@ -561,7 +570,7 @@ label {
 }
 
 .carta-memoria.acertada {
-    background-color: #a315ce; 
+    background-color: #a315ce;
     color: white;
 }
 
