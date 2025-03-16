@@ -33,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     intentosTexto.textContent = `Intentos restantes: ${intentosRestantes}`;
     cartasEmparejadasTexto.textContent = `Cartas emparejadas: ${cartasEmparejadas}`;
 
-    const sonidoCorrecto = new Audio('../../audio/resultado/correcto.mp3');
-    const sonidoIncorrecto = new Audio('../../audio/resultado/incorrecto.mp3');
-    const cancionGanar = new Audio('../../audio/resultado/ganar.mp3');
-    const cancionPerder = new Audio('../../audio/resultado/perder.mp3');
+    const sonidoCorrecto = new Audio('../audio/resultado/correcto.mp3');
+    const sonidoIncorrecto = new Audio('../audio/resultado/incorrecto.mp3');
+    const cancionGanar = new Audio('../audio/resultado/ganar.mp3');
+    const cancionPerder = new Audio('../audio/resultado/perder.mp3');
 
     function crearCartas() {
         tablero.innerHTML = "";
