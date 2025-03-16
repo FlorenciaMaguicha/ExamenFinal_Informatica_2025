@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!document.querySelector(".btn-jugar-again")) {
             const botonReiniciar = document.createElement("button");
-            botonReiniciar.textContent = "Bien jugado! Clickea para jugar de nuevo";
+            botonReiniciar.textContent = "Bien jugado! Clickea para jugar de nuevo.";
             botonReiniciar.classList.add("btn-jugar-again-ganar");
             document.body.appendChild(botonReiniciar);
 
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function juegoGanaste() {
     juegoTerminado = true;
     cancionGanar.play();
-    alert("¡Muy bien, GANASTE! \nEncontraste todas las cartas. \nClick al boton si queres volver a jugar");
+    alert("¡Muy bien, GANASTE! \nEncontraste todas las cartas. \nClic al botón 'Aceptar' si queres volver a jugar.");
 
     const cartasElementos = document.querySelectorAll(".carta-memoria");
     cartasElementos.forEach(function (carta) {
@@ -147,7 +147,7 @@ function juegoGanaste() {
 function finDelJuego() {
     juegoTerminado = true;
     cancionPerder.play();
-    alert("¡Perdiste! :( \nSe te acabaron los intentos. \nClickeá el boton para intentar nuevamente.");
+    alert("¡Perdiste! :( \nSe te acabaron los intentos. \nClic al botón 'Aceptar' para intentar nuevamente.");
 
     const cartasElementos = document.querySelectorAll(".carta-memoria");
     cartasElementos.forEach(function (carta) {
